@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import MainCard from "../components/main-card";
 
 export default function Home() {
