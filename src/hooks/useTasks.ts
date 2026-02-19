@@ -22,5 +22,5 @@ export default function useTasks() {
     loadTasks();
   }, []);
 
-  return { tasks, error }
+  return { tasks, error, reload: loadTasks }
 }
