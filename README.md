@@ -29,5 +29,5 @@ npm run dev
 
 ---
 
-# OBS 
-> - It just work if you're using the **[todolist-api](https://github.com/kev1n999/todolist-api)**
+# Obs
+> It just work if you're using the **[todolist-api](https://github.com/kev1n999/todolist-api)**
