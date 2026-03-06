@@ -1,4 +1,4 @@
-import { env } from "../env";
+import { env } from "../config/env";
 
 interface TaskFields {
   name: string;
@@ -12,7 +12,7 @@ interface TaskUpdate extends TaskFields {
 
 // Function to create a new task
 export async function createNewTask({ name, description, priority }: TaskFields) {
-  const req = await fetch(`${env.server_url}/create-task`, {
+  const req = await fetch(`${env.ServerURL}/create-task`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -32,7 +32,7 @@ export async function createNewTask({ name, description, priority }: TaskFields)
 
 // Function to fetch existing tasks
 export async function fetchTasks() {
-  const req = await fetch(`${env.server_url}/find-tasks`);
+  const req = await fetch(`${env.ServerURL}/find-tasks`);
   if (!req.ok) {
     const errorResponse = await req.json();
     throw new Error(errorResponse || "an error ocurred to fetch tasks!");
@@ -43,7 +43,7 @@ export async function fetchTasks() {
 
 // Function to delete a specific task
 export async function deleteTasks(filter: string, filterContent: string) {
-  const req = await fetch(`${env.server_url}/delete-task?filter=${filter}&filter_content=${filterContent}`, {
+  const req = await fetch(`${env.ServerURL}/delete-task?filter=${filter}&filter_content=${filterContent}`, {
     method: "DELETE",
   });
   if (!req.ok) {
@@ -63,7 +63,7 @@ export async function updateTask(filter: string, filterContent: string, fields: 
     status: fields.status.trim(),
   });
 
-  const req = await fetch(`${env.server_url}/update-task?${params.toString()}`, {
+  const req = await fetch(`${env.ServerURL}/update-task?${params.toString()}`, {
     method: "PATCH",
   });
   if (!req.ok) {

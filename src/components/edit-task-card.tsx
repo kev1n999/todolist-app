@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import SimpleButton from "./button";
-import { updateTask } from "../services/todolistService";
+import { updateTask } from "../services/todolist.service";
 
 interface CardProps {
   reload: () => Promise<void>;
