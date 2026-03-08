@@ -18,7 +18,7 @@ export default function Signup() {
         <label>E-mail</label>
         <input
           name="email"
-          className="bg-neutral-800 text-white rounded-md outline-none p-1" type="text" placeholder="Type your e-mail" required
+          className="bg-neutral-800 text-white rounded-md outline-none p-1" type="email" placeholder="Type your e-mail" required
         />
 
         <label>Password</label>
