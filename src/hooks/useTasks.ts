@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchTasks } from "../services/todolistService";
+import { fetchTasks } from "../services/todolist.service";
 import { Task } from "../interfaces/task";
 
 export default function useTasks() {

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import useTasks from "../hooks/useTasks";
-import { createNewTask } from "../services/todolistService";
+import { createNewTask } from "../services/todolist.service";
 import SimpleButton from "./button";
 import TasksCard from "./tasks-card";
 

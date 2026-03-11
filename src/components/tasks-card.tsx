@@ -1,7 +1,7 @@
 "use client";
 
 import { Pencil, Trash2 } from "lucide-react";
-import { deleteTasks } from "../services/todolistService";
+import { deleteTasks } from "../services/todolist.service";
 import { useState } from "react";
 import { EditCard } from "./edit-task-card";
 
