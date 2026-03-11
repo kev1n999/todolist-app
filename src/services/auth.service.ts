@@ -21,7 +21,7 @@ export async function userRegister(
 export async function userLogin(
   email: string,
   password: string,
-) {
+): Promise<string> {
   const userExists = await User.findOne({ email });
   if (!userExists) throw new Error("User do not exists!");
   const isValidPassword = await bcrypt.compare(password, userExists.password);

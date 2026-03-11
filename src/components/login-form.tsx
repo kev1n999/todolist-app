@@ -1,10 +1,18 @@
 "use client";
-import { useActionState } from "react";
+
+import { useActionState, useEffect } from "react";
 import { formLogin } from "../app/actions/login";
+import { useRouter } from "next/navigation";
 
 export default function Signin() {
+  const router = useRouter();
   const [state, action] = useActionState(formLogin, null);
 
+  useEffect(() => {
+    if (state?.success) {
+      router.push("/todolist");
+    }
+  }, [state, router]);
   return (
     <div className="flex justify-center items-center min-h-screen">
       <form action={action} className="flex flex-col gap-1.5 bg-neutral-900 p-10 rounded-2xl w-96">
@@ -28,7 +36,7 @@ export default function Signin() {
         {state?.success && (
           <p className="text-sm text-green-400">Login successful!</p>
         )}
-        <button type="submit" className="cursor-pointer bg-neutral-800 rounded-md p-1 transition-colors hover:bg-neutral-700">Sign-up</button>
+        <button type="submit" className="cursor-pointer bg-neutral-800 rounded-md p-1 transition-colors hover:bg-neutral-700">Sign-in</button>
       </form>
     </div>
   )

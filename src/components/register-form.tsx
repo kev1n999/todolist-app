@@ -1,4 +1,5 @@
 "use client";
+
 import { useActionState } from "react";
 import { formRegister } from "../app/actions/register";
 
